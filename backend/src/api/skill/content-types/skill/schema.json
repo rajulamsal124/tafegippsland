@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "skills",
+  "info": {
+    "singularName": "skill",
+    "pluralName": "skills",
+    "displayName": "Skill",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "skills": {
+      "type": "enumeration",
+      "enum": [
+        "FoodSafetyHygiene",
+        "QualityControlAssurance",
+        "FoodProcessingTechniques",
+        "AgriculturalKnowledge",
+        "SupplyChainManagement",
+        "FoodScienceNutrition",
+        "ResearchAndDevelopment",
+        "TeamCollaboration",
+        "ProblemSolving",
+        "CommunicationSkills"
+      ],
+      "default": "FoodScienceNutrition",
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "courses": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::course.course",
+      "mappedBy": "skills"
+    }
+  }
+}

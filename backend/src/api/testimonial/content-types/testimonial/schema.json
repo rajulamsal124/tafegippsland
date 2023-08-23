@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "testimonials",
+  "info": {
+    "singularName": "testimonial",
+    "pluralName": "testimonials",
+    "displayName": "Testimonial"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "student_name": {
+      "type": "text",
+      "required": true,
+      "unique": true
+    },
+    "testimonal_message": {
+      "type": "richtext",
+      "required": true
+    },
+    "career": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::career.career"
+    }
+  }
+}
