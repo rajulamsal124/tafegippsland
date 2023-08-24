@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2023-08-23T02:46:21.025Z"
+    "x-generation-date": "2023-08-24T10:22:41.543Z"
   },
   "x-strapi-config": {
     "path": "/documentation",
@@ -25,7 +25,7 @@
   },
   "servers": [
     {
-      "url": "http://localhost:1337/api",
+      "url": "http://localhost:3500/api",
       "description": "Development server"
     }
   ],
@@ -95,18 +95,18 @@
           "data": {
             "required": [
               "Title",
-              "description",
-              "career_opportunities"
+              "Description",
+              "Opportunities"
             ],
             "type": "object",
             "properties": {
               "Title": {
                 "type": "string"
               },
-              "description": {
+              "Description": {
                 "type": "string"
               },
-              "career_opportunities": {
+              "Opportunities": {
                 "type": "string"
               },
               "sitemap_exclude": {
@@ -166,17 +166,17 @@
         "type": "object",
         "required": [
           "Title",
-          "description",
-          "career_opportunities"
+          "Description",
+          "Opportunities"
         ],
         "properties": {
           "Title": {
             "type": "string"
           },
-          "description": {
+          "Description": {
             "type": "string"
           },
-          "career_opportunities": {
+          "Opportunities": {
             "type": "string"
           },
           "createdAt": {
@@ -1472,10 +1472,10 @@
                                                                                       "Title": {
                                                                                         "type": "string"
                                                                                       },
-                                                                                      "description": {
+                                                                                      "Description": {
                                                                                         "type": "string"
                                                                                       },
-                                                                                      "career_opportunities": {
+                                                                                      "Opportunities": {
                                                                                         "type": "string"
                                                                                       },
                                                                                       "createdAt": {
@@ -3738,10 +3738,10 @@
                                                                       "Title": {
                                                                         "type": "string"
                                                                       },
-                                                                      "description": {
+                                                                      "Description": {
                                                                         "type": "string"
                                                                       },
-                                                                      "career_opportunities": {
+                                                                      "Opportunities": {
                                                                         "type": "string"
                                                                       },
                                                                       "createdAt": {
@@ -5144,10 +5144,10 @@
                                                                         "Title": {
                                                                           "type": "string"
                                                                         },
-                                                                        "description": {
+                                                                        "Description": {
                                                                           "type": "string"
                                                                         },
-                                                                        "career_opportunities": {
+                                                                        "Opportunities": {
                                                                           "type": "string"
                                                                         },
                                                                         "createdAt": {
@@ -6724,10 +6724,10 @@
                                           "Title": {
                                             "type": "string"
                                           },
-                                          "description": {
+                                          "Description": {
                                             "type": "string"
                                           },
-                                          "career_opportunities": {
+                                          "Opportunities": {
                                             "type": "string"
                                           },
                                           "createdAt": {
@@ -8040,10 +8040,10 @@
                                                                         "Title": {
                                                                           "type": "string"
                                                                         },
-                                                                        "description": {
+                                                                        "Description": {
                                                                           "type": "string"
                                                                         },
-                                                                        "career_opportunities": {
+                                                                        "Opportunities": {
                                                                           "type": "string"
                                                                         },
                                                                         "createdAt": {
@@ -8593,10 +8593,10 @@
                       "Title": {
                         "type": "string"
                       },
-                      "description": {
+                      "Description": {
                         "type": "string"
                       },
-                      "career_opportunities": {
+                      "Opportunities": {
                         "type": "string"
                       },
                       "createdAt": {

@@ -17,11 +17,11 @@
       "required": true,
       "unique": true
     },
-    "description": {
+    "Description": {
       "type": "richtext",
       "required": true
     },
-    "career_opportunities": {
+    "Opportunities": {
       "type": "richtext",
       "required": true
     }

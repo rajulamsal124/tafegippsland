@@ -28,24 +28,26 @@ export default {
       // 'zh-Hans',
       // 'zh',
     ],
-    theme: {
-      dark: {
-        colors: {
-          primary100: "#669f66",
-          primary200: "#5effc3",
-          primary500: "#2f6846",
-          buttonPrimary500: "#0b2f0b",
-          primary600: "#00bd77",
-          buttonPrimary600: "#ffbd77",
-          primary700: "#008755",
-        },
-      },
-    },
+    // theme: {
+    //   dark: {
+    //     colors: {
+    //       primary100: "#b8d2b8",
+    //       primary200: "#96bd96",
+    //       primary500: "#1b6f1a",
+    //       buttonPrimary500: "#1b6f1a",
+    //       primary600: "#196518",
+    //       buttonPrimary600: "#0f3d0e",
+    //       primary700: "#134f12",
+    //     },
+    //   },
+    // },
     translations: {
       en: {
-        "app.components.LeftMenu.navbrand.title": "Tafe Gippslandsssss",
+        "app.components.LeftMenu.navbrand.title": "Tafe Gippslandssss",
+        "app.components.LeftMenu.navbrand.workplace": "Bright Future",
       },
     },
+    tutorials: false,
   },
   bootstrap(app) {
     console.log(app);
