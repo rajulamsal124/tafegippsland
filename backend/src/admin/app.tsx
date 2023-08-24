@@ -44,7 +44,7 @@ export default {
     translations: {
       en: {
         "app.components.LeftMenu.navbrand.title": "Tafe Gippslandssss",
-        "app.components.LeftMenu.navbrand.workplace": "Bright Future",
+        "app.components.LeftMenu.navbrand.workplace": "Bright Futures",
       },
     },
     tutorials: false,
