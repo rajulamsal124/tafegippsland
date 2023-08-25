@@ -23,6 +23,7 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 import Link from "next/link";
+import Newsletter from "./Newsletter/Newsletter";
 
 const Logo = (props: any) => {
   return (
@@ -96,7 +97,7 @@ export default function LargeWithLogoLeft() {
         left={0}
         right={0}
         bottom={0}
-        opacity={0.8}
+        opacity={0.9}
         zIndex={-2}
       />
       <Box
@@ -106,14 +107,16 @@ export default function LargeWithLogoLeft() {
         left={0}
         right={0}
         bottom={0}
-        opacity={0.9}
+        opacity={0.85}
         zIndex={-1}
       />
       <Container as={Stack} maxW={"6xl"} py={10}>
+        <Newsletter />
         <SimpleGrid
           templateColumns={{ sm: "1fr 1fr", md: "2fr 1fr 1fr 1fr 1fr" }}
           spacing={8}
           color="white"
+          mt={2}
         >
           <Stack spacing={6} ml={-30} pl={30}>
             <Box>
