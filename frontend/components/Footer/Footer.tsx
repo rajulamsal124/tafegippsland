@@ -37,7 +37,6 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
       {children}
     </Text>
   );
-};
 
 export default function LargeWithLogoLeft() {
   return (
