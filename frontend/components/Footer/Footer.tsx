@@ -4,12 +4,25 @@ import { ReactNode } from "react";
 
 import {
   Box,
+  Center,
   Container,
+  Divider,
+  Flex,
+  HStack,
   SimpleGrid,
+  Spacer,
   Stack,
   Text,
   useColorModeValue,
 } from "@chakra-ui/react";
+import {
+  FaFacebook,
+  FaTwitter,
+  FaDribbble,
+  FaInstagram,
+  FaLinkedin,
+} from "react-icons/fa";
+import Link from "next/link";
 
 const Logo = (props: any) => {
   return (
@@ -38,26 +51,100 @@ const ListHeader = ({ children }: { children: ReactNode }) => {
     </Text>
   );
 };
+const CopyrightSection = () => {
+  return (
+    <Flex
+      direction={{ base: "column", md: "row" }}
+      align="center"
+      justify="space-between"
+      ml={{ base: 0, md: -4 }}
+      flexGrow={1}
+      color="white"
+    >
+      <Text fontSize={"sm"} color="white" mb={{ base: 4, md: 0 }} pl={4}>
+        © 2023 Tafe Gippsland. All rights reserved
+      </Text>
+      <Flex>
+        <Link href="#" color={useColorModeValue("gray.700", "white")} mr={4}>
+          Terms & Conditions
+        </Link>
+        <Spacer mx={2} />
+        <Link href="#" color={useColorModeValue("gray.700", "white")}>
+          Privacy Policy
+        </Link>
+        <Spacer mx={2} />
+        <Link href="#" color={useColorModeValue("gray.700", "white")}>
+          Support
+        </Link>
+      </Flex>
+    </Flex>
+  );
+};
 export default function LargeWithLogoLeft() {
   return (
     <Box
-      bg={useColorModeValue("green.50", "green.700")}
-      color={useColorModeValue("green.700", "green.200")}
+      bg={"transparent"}
+      position="relative" // Set position to relative to contain child elements
     >
+      <Box
+        bgImage="url('https://images.unsplash.com/photo-1692864431050-165164becb51?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')"
+        bgSize="cover" // Ensure the image covers the entire container
+        bgRepeat="no-repeat"
+        position="absolute"
+        bgPosition="center"
+        top={0}
+        left={0}
+        right={0}
+        bottom={0}
+        opacity={0.8}
+        zIndex={-2}
+      />
+      <Box
+        bg="green.800"
+        position="absolute"
+        top={0}
+        left={0}
+        right={0}
+        bottom={0}
+        opacity={0.9}
+        zIndex={-1}
+      />
       <Container as={Stack} maxW={"6xl"} py={10}>
         <SimpleGrid
           templateColumns={{ sm: "1fr 1fr", md: "2fr 1fr 1fr 1fr 1fr" }}
           spacing={8}
+          color="white"
         >
-          <Stack spacing={6} ml={-30}>
+          <Stack spacing={6} ml={-30} pl={30}>
             <Box>
               <Logo color={useColorModeValue("gray.700", "white")} />
             </Box>
-            <Text fontSize={"sm"}>
-              © 2022 Chakra Templates. All rights reserved
+            <Text
+              color="white"
+              fontSize="md"
+              wordBreak={"break-word"}
+              sx={{ textAlign: "justify" }}
+            >
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
+              nisl eros, pulvinar facilisis justo mollis, auctor consequat urna.{" "}
+              <br /> Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              Quisque nisl eros, pulvinar facilisis justo mollis, auctor
+              consequat urna.
             </Text>
+            <HStack spacing={4} mt={4}>
+              <Box as={FaFacebook} size="24px" color="white" cursor="pointer" />
+              <Box as={FaTwitter} size="24px" color="white" cursor="pointer" />
+              <Box as={FaDribbble} size="24px" color="white" cursor="pointer" />
+              <Box
+                as={FaInstagram}
+                size="24px"
+                color="white"
+                cursor="pointer"
+              />
+              <Box as={FaLinkedin} size="24px" color="white" cursor="pointer" />
+            </HStack>
           </Stack>
-          <Stack align={"flex-start"}>
+          <Stack align={"flex-center"}>
             <ListHeader>Product</ListHeader>
             <Box as="a" href={"#"}>
               Overview
@@ -130,6 +217,8 @@ export default function LargeWithLogoLeft() {
             </Box>
           </Stack>
         </SimpleGrid>
+        <Divider mt={5} borderColor="white" />
+        <CopyrightSection />
       </Container>
     </Box>
   );
