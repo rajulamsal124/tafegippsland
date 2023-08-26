@@ -24,6 +24,7 @@ import {
 } from "react-icons/fa";
 import Link from "next/link";
 import Newsletter from "./Newsletter/Newsletter";
+import SocialLinks from "../Common/SocialLinks/SocialLinks";
 
 const Logo = (props: any) => {
   return (
@@ -66,7 +67,7 @@ const CopyrightSection = () => {
         © 2023 Tafe Gippsland. All rights reserved
       </Text>
       <Flex>
-        <Link href="#" color={useColorModeValue("gray.700", "white")} mr={4}>
+        <Link href="#" color={useColorModeValue("gray.700", "white")}>
           Terms & Conditions
         </Link>
         <Spacer mx={2} />
@@ -203,7 +204,7 @@ export default function LargeWithLogoLeft() {
           </Stack>
           <Stack align={"flex-start"}>
             <ListHeader>Follow Us</ListHeader>
-            <Box as="a" href={"#"}>
+            {/* <Box as="a" href={"#"}>
               Facebook
             </Box>
             <Box as="a" href={"#"}>
@@ -217,7 +218,8 @@ export default function LargeWithLogoLeft() {
             </Box>
             <Box as="a" href={"#"}>
               LinkedIn
-            </Box>
+            </Box> */}
+            <SocialLinks />
           </Stack>
         </SimpleGrid>
         <Divider mt={5} borderColor="white" />

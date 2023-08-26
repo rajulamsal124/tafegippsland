@@ -1,3 +1,10 @@
+"use client";
+import Faq from "@/components/Common/Faq/Faq";
+
 export default function Home() {
-  return <main>Hello</main>;
+  return (
+    <main>
+      <Faq />
+    </main>
+  );
 }
