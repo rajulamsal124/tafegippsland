@@ -204,7 +204,7 @@ export default function LargeWithLogoLeft() {
           </Stack>
           <Stack align={"flex-start"}>
             <ListHeader>Follow Us</ListHeader>
-            {/* <Box as="a" href={"#"}>
+            <Box as="a" href={"#"}>
               Facebook
             </Box>
             <Box as="a" href={"#"}>
@@ -218,8 +218,8 @@ export default function LargeWithLogoLeft() {
             </Box>
             <Box as="a" href={"#"}>
               LinkedIn
-            </Box> */}
-            <SocialLinks />
+            </Box>
+            {/* <SocialLinks /> */}
           </Stack>
         </SimpleGrid>
         <Divider mt={5} borderColor="white" />
