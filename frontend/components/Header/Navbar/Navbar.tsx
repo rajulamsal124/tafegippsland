@@ -1,3 +1,4 @@
+"use client";
 import {
   Box,
   Flex,
@@ -5,20 +6,17 @@ import {
   IconButton,
   Stack,
   Collapse,
-  Icon,
   Popover,
   PopoverTrigger,
   PopoverContent,
   useColorModeValue,
-  useBreakpointValue,
   useDisclosure,
 } from "@chakra-ui/react";
-import {
-  HamburgerIcon,
-  CloseIcon,
-  ChevronDownIcon,
-  ChevronRightIcon,
-} from "@chakra-ui/icons";
+import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
+import { NavItemProps } from "@/types/navbar";
+import color from "@/theme/color";
+import { routes } from "@/routes/routes";
+import Link from "next/link";
 const Logo = (props: any) => {
   return (
     <svg
@@ -90,8 +88,8 @@ export default function WithSubnavigation() {
 }
 
 const DesktopNav = () => {
-  const linkColor = useColorModeValue("gray.600", "gray.200");
-  const linkHoverColor = useColorModeValue("gray.800", "white");
+  const linkColor = useColorModeValue("green.900", "green.200");
+  const linkHoverColor = useColorModeValue("green.500", "white");
   const popoverContentBgColor = useColorModeValue("white", "gray.800");
 
   return (
@@ -104,7 +102,7 @@ const DesktopNav = () => {
                 as="a"
                 p={2}
                 href={navItem.href ?? "#"}
-                fontSize={"sm"}
+                fontSize={"md"}
                 fontWeight={500}
                 color={linkColor}
                 _hover={{
@@ -139,41 +137,15 @@ const DesktopNav = () => {
   );
 };
 
-const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
+const DesktopSubNav = ({}: NavItemProps) => {
   return (
-    <Box
-      as="a"
-      href={href}
-      role={"group"}
-      display={"block"}
-      p={2}
-      rounded={"md"}
-      _hover={{ bg: useColorModeValue("pink.50", "gray.900") }}
-    >
-      <Stack direction={"row"} align={"center"}>
-        <Box>
-          <Text
-            transition={"all .3s ease"}
-            _groupHover={{ color: "pink.400" }}
-            fontWeight={500}
-          >
-            {label}
-          </Text>
-          <Text fontSize={"sm"}>{subLabel}</Text>
+    <Stack direction={"row"} spacing={4}>
+      {routes.map((route) => (
+        <Box key={route.label}>
+          <Link href={route.path}>{route.label}</Link>
         </Box>
-        <Flex
-          transition={"all .3s ease"}
-          transform={"translateX(-10px)"}
-          opacity={0}
-          _groupHover={{ opacity: "100%", transform: "translateX(0)" }}
-          justify={"flex-end"}
-          align={"center"}
-          flex={1}
-        >
-          <Icon color={"pink.400"} w={5} h={5} as={ChevronRightIcon} />
-        </Flex>
-      </Stack>
-    </Box>
+      ))}
+    </Stack>
   );
 };
 
@@ -191,7 +163,7 @@ const MobileNav = () => {
   );
 };
 
-const MobileNavItem = ({ label, children, href }: NavItem) => {
+const MobileNavItem = ({ label, children, href }: NavItemProps) => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
@@ -225,10 +197,12 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
             pl={4}
             borderLeft={1}
             borderStyle={"solid"}
+            // eslint-disable-next-line react-hooks/rules-of-hooks
             borderColor={useColorModeValue("gray.200", "gray.700")}
             align={"start"}
             fontSize={"sm"}
             fontWeight={500}
+            // eslint-disable-next-line react-hooks/rules-of-hooks
             color={useColorModeValue("gray.700", "gray.50")}
           >
             {children.map((child) => (
@@ -243,94 +217,29 @@ const MobileNavItem = ({ label, children, href }: NavItem) => {
   );
 };
 
-interface NavItem {
-  label: string;
-  subLabel?: string;
-  children?: Array<NavItem>;
-  href?: string;
-}
-const NAV_ITEMS: Array<NavItem> = [
+// interface NavItem {
+//   label: string;
+//   subLabel?: string;
+//   children?: Array<NavItem>;
+//   href?: string;
+// }
+
+const NAV_ITEMS: Array<NavItemProps> = [
   {
-    label: "Inspiration",
-    children: [
-      {
-        label: "Explore Design Work",
-        subLabel: "Trending Design to inspire you",
-        href: "#",
-      },
-      {
-        label: "New & Noteworthy",
-        subLabel: "Up-and-coming Designers",
-        href: "#",
-      },
-    ],
+    label: "Home",
+    href: routes[0].path,
   },
   {
-    label: "Inspiration",
-    children: [
-      {
-        label: "Explore Design Work",
-        subLabel: "Trending Design to inspire you",
-        href: "#",
-      },
-      {
-        label: "New & Noteworthy",
-        subLabel: "Up-and-coming Designers",
-        href: "#",
-      },
-    ],
+    label: "About",
+    href: routes[1].path,
   },
   {
-    label: "Inspiration",
-    children: [
-      {
-        label: "Explore Design Work",
-        subLabel: "Trending Design to inspire you",
-        href: "#",
-      },
-      {
-        label: "New & Noteworthy",
-        subLabel: "Up-and-coming Designers",
-        href: "#",
-      },
-    ],
+    label: "Services",
+    href: routes[2].path,
   },
   {
-    label: "Inspiration",
-    children: [
-      {
-        label: "Explore Design Work",
-        subLabel: "Trending Design to inspire you",
-        href: "#",
-      },
-      {
-        label: "New & Noteworthy",
-        subLabel: "Up-and-coming Designers",
-        href: "#",
-      },
-    ],
+    label: "Contact",
+    href: routes[3].path,
   },
-  {
-    label: "Find Work",
-    children: [
-      {
-        label: "Job Board",
-        subLabel: "Find your dream design job",
-        href: "#",
-      },
-      {
-        label: "Freelance Projects",
-        subLabel: "An exclusive list for contract work",
-        href: "#",
-      },
-    ],
-  },
-  {
-    label: "Learn Design",
-    href: "#",
-  },
-  {
-    label: "Hire Designers",
-    href: "#",
-  },
+  // Add more navigation items based on your routes array
 ];

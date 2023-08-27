@@ -21,8 +21,13 @@
     "baseUrl": ".",
     "paths": {
       "@/*": ["./*"],
-      "@/hooks/*": ["hooks/*"]
-    }
+      "@/components/*": ["components/*"],
+      "@/hooks/*": ["hooks/*"],
+      "@/lib/*": ["lib/*"],
+      "@/theme/*": ["theme/*"],
+      "@/types/*": ["types/*"],
+      "@/features/*": ["features/*"]
+    },
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
   "exclude": ["node_modules"]
