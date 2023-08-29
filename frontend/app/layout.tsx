@@ -1,9 +1,11 @@
+'use client';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { Provider } from './provider';
 import Header from '@/components/common/Header/Header';
 import { LayoutProps } from '@/types/layout';
-
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { ReactQueryDevtools } from '@tanstack/react-query-devtools';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
@@ -13,12 +15,17 @@ export const metadata: Metadata = {
 
 const RootLayout: React.FC<LayoutProps> = ({ children, showHeader = true }) => {
   // console.log('test', showHeader);
+  // Intialize the QueryClient()
+  const queryclient = new QueryClient();
   return (
     <html lang="en">
       <body className={inter.className}>
         <Provider>
-          {showHeader && <Header />}
-          {children}
+          <QueryClientProvider client={queryclient}>
+            <ReactQueryDevtools initialIsOpen={false} />
+            {showHeader && <Header />}
+            {children}
+          </QueryClientProvider>
         </Provider>
       </body>
     </html>
